@@ -5,7 +5,7 @@ USE SpotifyClone;
 CREATE TABLE SpotifyClone.plans (
     id INT PRIMARY KEY AUTO_INCREMENT,
     plan VARCHAR(50) NOT NULL,
-    value DOUBLE NOT NULL
+    value DECIMAL(7,2) NOT NULL
 )  ENGINE=INNODB;
 
 INSERT INTO SpotifyClone.plans(plan, value)
