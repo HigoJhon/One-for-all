@@ -86,7 +86,7 @@ CREATE TABLE SpotifyClone.music (
 
 INSERT INTO SpotifyClone.music(artist,album,music,duration_seconds)
 VALUES
-  (1,1,'BREAK MY SOUL',276),
+  (1,1,'BREAK MY SOUL',279),
   (1,1,'VIRGOS GROOVE',369),
   (1,1,'ALIEN SUPERSTAR',116),
   (2,2,"Don't Stop Me Now",203),
@@ -99,16 +99,16 @@ VALUES
   
 CREATE TABLE SpotifyClone.historic (
     user INT NOT NULL,
-    historic_reproductions INT NOT NULL,
+    id_music INT NOT NULL,
     date_reproductions DATETIME NOT NULL,
-    CONSTRAINT PRIMARY KEY (user,historic_reproductions),
+    CONSTRAINT PRIMARY KEY (user,id_music),
     FOREIGN KEY (user)
         REFERENCES SpotifyClone.user (id),
-	FOREIGN KEY (historic_reproductions)
+	FOREIGN KEY (id_music)
         REFERENCES SpotifyClone.music (id)
 )  ENGINE=INNODB;
 
-INSERT INTO SpotifyClone.historic(user,historic_reproductions,date_reproductions)
+INSERT INTO SpotifyClone.historic(user,id_music,date_reproductions)
 VALUES
   (1,8,"2022-02-28 10:45:55"),
   (1,2, "2020-05-02 05:30:35"),
